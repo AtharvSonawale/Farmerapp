@@ -42,7 +42,7 @@ const Profile = ({ navigation }) => {
               source={
                 user.profilePicture
                   ? { uri: user.profilePicture }
-                  : require("../../assets/images/5402435_account_profile_user_avatar_man_icon.png") // Default image
+                  : require("../../../assets/images/5402435_account_profile_user_avatar_man_icon.png") // Default image
               }
               style={styles.profileImage}
             />

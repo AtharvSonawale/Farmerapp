@@ -3,31 +3,19 @@ import {
   View,
   Text,
   TextInput,
-  Button,
   Alert,
   StyleSheet,
   ActivityIndicator,
   ImageBackground,
+  TouchableOpacity,
 } from "react-native";
-import { mockDB } from "../../assets/db/mockdb"; // Importing mock database
+import { mockDB } from "../../../assets/db/mockdb1"; // Importing mock database
 
-const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
+const SLoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [attempts, setAttempts] = useState(0);
   const [loading, setLoading] = useState(false); // Loading state for the login process
-  const [clickCount, setClickCount] = useState(0); // Track the number of clicks on the Login header
-
-  // Function to handle clicks on the Login header
-  const handleHeaderClick = () => {
-    setClickCount((prev) => prev + 1); // Increment click count
-
-    // Check if the header has been clicked 3 times
-    if (clickCount + 1 >= 3) {
-      navigation.navigate("SLogin");
-      setClickCount(0); // Reset click count after navigation
-    }
-  };
 
   // Function to validate the login
   const handleLogin = async () => {
@@ -61,7 +49,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       }
 
       Alert.alert("Success", "Logged in successfully!", [
-        { text: "OK", onPress: () => navigation.navigate("Home") },
+        { text: "OK", onPress: () => navigation.navigate("SHome") },
       ]);
     } catch (error) {
       console.error(error);
@@ -73,13 +61,11 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <ImageBackground
-      source={require("../../assets/images/Gemini_Generated_Image_omh53bomh53bomh5.jpg")} // Replace with your image path
+      source={require("../../../assets/images/Farmer2.jpeg")} // Replace with your image path
       style={styles.background}
     >
       <View style={styles.container}>
-        <Text style={styles.header} onPress={handleHeaderClick}>
-          Login
-        </Text>
+        <Text style={styles.header}>Login</Text>
 
         <TextInput
           style={styles.input}
@@ -99,7 +85,14 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           autoCorrect={false}
         />
 
-        <Button title="Login" onPress={handleLogin} disabled={loading} />
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={handleLogin}
+          disabled={loading}
+          activeOpacity={0.9} // Set the opacity when pressed
+        >
+          <Text style={styles.loginButtonText}>Login</Text>
+        </TouchableOpacity>
 
         {loading && (
           <ActivityIndicator
@@ -139,9 +132,10 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-end", // Align content to the bottom
     alignItems: "center",
     paddingHorizontal: 16,
+    paddingBottom: 50, // Add padding to avoid sticking to the very bottom
     borderRadius: 10,
     width: "85%", // Adjust width as needed
   },
@@ -160,6 +154,28 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingLeft: 10,
     backgroundColor: "white", // Input background to make it readable
+    shadowColor: "#000", // Shadow color
+    shadowOffset: { width: 0, height: 2 }, // Shadow offset
+    shadowOpacity: 0.25, // Shadow opacity
+    shadowRadius: 3.84, // Shadow blur radius
+    elevation: 5, // Elevation for Android
+  },
+  loginButton: {
+    backgroundColor: "#007bff", // Button background color
+    paddingVertical: 10,
+    borderRadius: 10, // Add curve to the button
+    width: "25%",
+    alignItems: "center",
+    shadowColor: "#000", // Shadow color
+    shadowOffset: { width: 0, height: 1 }, // Shadow offset
+    shadowOpacity: 0.25, // Shadow opacity
+    shadowRadius: 3.84, // Shadow blur radius
+    elevation: 5, // Elevation for Android
+  },
+  loginButtonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
   },
   footerText: {
     marginTop: 20,
@@ -173,4 +189,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LoginScreen;
+export default SLoginScreen;

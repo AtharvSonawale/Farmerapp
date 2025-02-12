@@ -17,19 +17,19 @@ const HomeScreen = ({ navigation }) => {
   const vegetableItems = [
     {
       name: "Yellow Bell Pepper",
-      source: require("../../assets/images/YellowBellPepper.jpg"),
+      source: require("../../../assets/images/YellowBellPepper.jpg"),
       price: "$2.00",
       quantity: "1kg",
     },
     {
       name: "Tomatoes",
-      source: require("../../assets/images/Tomatoes.jpg"),
+      source: require("../../../assets/images/Tomatoes.jpg"),
       price: "$1.50",
       quantity: "1kg",
     },
     {
       name: "Ginger",
-      source: require("../../assets/images/Ginger.jpg"),
+      source: require("../../../assets/images/Ginger.jpg"),
       price: "$3.00",
       quantity: "500g",
     },
@@ -96,7 +96,7 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require("../../assets/images/logo.png")}
+          source={require("../../../assets/images/logo.png")}
           style={styles.logo}
         />
         <Text style={styles.logoText}>SupVeggies</Text>
@@ -133,11 +133,11 @@ const HomeScreen = ({ navigation }) => {
         {/* Banner Container */}
         <View style={styles.bannerContainer}>
           <Image
-            source={require("../../assets/images/banner3.jpg")}
+            source={require("../../../assets/images/banner3.jpg")}
             style={styles.bannerImage}
           />
           <Image
-            source={require("../../assets/images/banner4.jpg")}
+            source={require("../../../assets/images/banner4.jpg")}
             style={styles.bannerImage}
           />
         </View>
@@ -195,14 +195,14 @@ const HomeScreen = ({ navigation }) => {
         {/* Additional Images */}
         <View style={styles.imageContainer}>
           <Image
-            source={require("../../assets/images/banner3.jpg")}
+            source={require("../../../assets/images/banner3.jpg")}
             style={styles.landscapeImage}
             resizeMode="cover"
           />
         </View>
         <View style={styles.imageContainer}>
           <Image
-            source={require("../../assets/images/banner4.jpg")}
+            source={require("../../../assets/images/banner4.jpg")}
             style={styles.anotherImage}
             resizeMode="cover"
           />
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginLeft: 10,
-    color: "#4CAF50",
+    color: "#343434",
   },
   profileButton: {
     marginLeft: "auto",
@@ -262,25 +262,23 @@ const styles = StyleSheet.create({
   scrollView: {
     marginTop: 100,
   },
-  scrollViewContent: {
-    paddingTop: 20,
-  },
   searchBar: {
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#fff",
     paddingHorizontal: 10,
+    paddingVertical: 10,
     justifyContent: "space-between",
     borderRadius: 30,
     elevation: 3,
-    margin: 10,
+    margin: 15,
   },
   searchInput: {
     flex: 1,
     height: 40,
     borderColor: "#ccc",
     borderWidth: 1,
-    borderRadius: 30,
+    borderRadius: 20,
     paddingHorizontal: 10,
   },
   micButton: {

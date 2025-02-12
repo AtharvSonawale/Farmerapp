@@ -18,7 +18,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/Gemini_Generated_Image_9al4c79al4c79al41.jpg')} // Replace with your image path
+        source={require('../../../assets/images/Gemini_Generated_Image_9al4c79al4c79al41.jpg')} // Replace with your image path
         style={styles.image}
         resizeMode="contain"
       />

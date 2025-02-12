@@ -1,31 +1,33 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { GestureHandlerRootView } from "react-native-gesture-handler"; // Import GestureHandlerRootView
-import SplashScreen from "../../../FarmerApp/Frontend/components/screens/SplashScreen";
-import LoginScreen from "../../../FarmerApp/Frontend/components/screens/LoginScreen";
-import SignupScreen from "../../../FarmerApp/Frontend/components/screens/SignupScreen";
-import HomeScreen from "../../../FarmerApp/Frontend/components/screens/HomeScreen";
-import BasketScreen from "../../../FarmerApp/Frontend/components/screens/BasketScreen";
-import ForgotPasswordScreen from "@/components/screens/ForgotPassword";
-import ItemDetails from "@/components/screens/ItemDetails";
-import Profile from "../../../FarmerApp/Frontend/components/screens/Profile"; // Ensure this path is correct
-import Order from "../../../FarmerApp/Frontend/components/screens/Order";
-import AddressesScreen from "../../../FarmerApp/Frontend/components/screens/AddressesScreen";
-import LocationGrantScreen from "../../../FarmerApp/Frontend/components/screens/LocationGrantScreen";
-import UseThisLocationScreen from "../../../FarmerApp/Frontend/components/screens/UseThisLocationScreen";
-import CurrentLocationScreen from "../../../FarmerApp/Frontend/components/screens/CurrentLocation";
-import SLoginScreen from "../../../FarmerApp/Frontend/components/screens/SLoginScreen";
-import SHomeScreen from "../../../FarmerApp/Frontend/components/screens/SHomeScreen";
-import SProfile from "@/components/screens/SProfile";
-import ManageProducts from "@/components/screens/ManageProducts";
-import ListProductsScreen from "@/components/screens/ListProductsScreen";
-import IndividualProduct from "@/components/screens/IndividualProduct";
+import SplashScreen from "../components/screens/BuyerSide/SplashScreen";
+import LoginScreen from "../components/screens/BuyerSide/LoginScreen";
+import SignupScreen from "../components/screens/BuyerSide/SignupScreen";
+import HomeScreen from "../components/screens/BuyerSide/HomeScreen";
+import BasketScreen from "../components/screens/BuyerSide/BasketScreen";
+import ForgotPasswordScreen from "@/components/screens/BuyerSide/ForgotPassword";
+import ItemDetails from "@/components/screens/BuyerSide/ItemDetails";
+import Profile from "../components/screens/BuyerSide/Profile"; // Ensure this path is correct
+import Order from "../components/screens/BuyerSide/Order";
+import AddressesScreen from "../components/screens/SellerSide/AddressesScreen";
+import LocationGrantScreen from "../components/screens/BuyerSide/LocationGrantScreen";
+import UseThisLocationScreen from "../components/screens/BuyerSide/UseThisLocationScreen";
+import CurrentLocationScreen from "../components/screens/BuyerSide/CurrentLocation";
+import SLoginScreen from "../components/screens/SellerSide/SLoginScreen";
+import SHomeScreen from "../components/screens/SellerSide/SHomeScreen";
+import SProfile from "@/components/screens/SellerSide/SProfile";
+import ManageProducts from "@/components/screens/BuyerSide/ManageProducts";
+import ListProductsScreen from "@/components/screens/BuyerSide/ListProductsScreen";
+import IndividualProduct from "@/components/screens/BuyerSide/IndividualProduct";
 
 const Stack = createNativeStackNavigator();
 
 const App: React.FC = () => {
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}> {/* Wrap the entire app with GestureHandlerRootView */}
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      {" "}
+      {/* Wrap the entire app with GestureHandlerRootView */}
       <Stack.Navigator
         initialRouteName="Splash"
         screenOptions={{ headerShown: false }}
@@ -43,8 +45,14 @@ const App: React.FC = () => {
         <Stack.Screen name="Order" component={Order} />
         <Stack.Screen name="Addresses" component={AddressesScreen} />
         <Stack.Screen name="LocationGrant" component={LocationGrantScreen} />
-        <Stack.Screen name="UseThisLocation" component={UseThisLocationScreen} />
-        <Stack.Screen name="CurrentLocation" component={CurrentLocationScreen} />
+        <Stack.Screen
+          name="UseThisLocation"
+          component={UseThisLocationScreen}
+        />
+        <Stack.Screen
+          name="CurrentLocation"
+          component={CurrentLocationScreen}
+        />
         <Stack.Screen name="Basket" component={BasketScreen} />
         <Stack.Screen name="ManageProducts" component={ManageProducts} />
         <Stack.Screen name="ListProducts" component={ListProductsScreen} />

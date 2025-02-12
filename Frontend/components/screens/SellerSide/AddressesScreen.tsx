@@ -59,7 +59,7 @@ const AddressesScreen = ({ navigation }) => {
           // No addresses scenario
           <View style={styles.emptyContainer}>
             <Image
-              source={require("../../assets/images/299061_house_icon.png")} // Replace with your house image
+              source={require("../../../assets/images/299061_house_icon.png")} // Replace with your house image
               style={styles.emptyImage}
             />
             <Text style={styles.emptyText}>

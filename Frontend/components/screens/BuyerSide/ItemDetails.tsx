@@ -95,17 +95,17 @@ const ItemDetails = ({ route, navigation }) => {
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {[
             {
-              source: require("../../assets/images/YellowBellPepper.jpg"),
+              source: require("../../../assets/images/YellowBellPepper.jpg"),
               price: "$2.00",
               quantity: "1kg",
             },
             {
-              source: require("../../assets/images/Tomatoes.jpg"),
+              source: require("../../../assets/images/Tomatoes.jpg"),
               price: "$1.50",
               quantity: "1kg",
             },
             {
-              source: require("../../assets/images/Ginger.jpg"),
+              source: require("../../../assets/images/Ginger.jpg"),
               price: "$3.00",
               quantity: "500g",
             },

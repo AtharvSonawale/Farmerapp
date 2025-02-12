@@ -14,7 +14,7 @@ const ProductSalesScreen = ({ navigation }) => {
   const [orders] = useState([
     {
       id: "1",
-      productImage: require("../../assets/images/Tomatoes.jpg"),
+      productImage: require("../../../assets/images/Tomatoes.jpg"),
       productName: "Tomatoes",
       quantity: 5,
       buyerAddress: "District A",
@@ -28,7 +28,7 @@ const ProductSalesScreen = ({ navigation }) => {
     },
     {
       id: "2",
-      productImage: require("../../assets/images/Gemini_Generated_Image_Potatoes.jpg"),
+      productImage: require("../../../assets/images/Gemini_Generated_Image_Potatoes.jpg"),
       productName: "Potatoes",
       quantity: 3,
       buyerAddress: "District B",
@@ -42,7 +42,7 @@ const ProductSalesScreen = ({ navigation }) => {
     },
     {
       id: "3",
-      productImage: require("../../assets/images/Gemini_Generated_Image_Carrot.jpg"),
+      productImage: require("../../../assets/images/Gemini_Generated_Image_Carrot.jpg"),
       productName: "Carrots",
       quantity: 10,
       buyerAddress: "District C",

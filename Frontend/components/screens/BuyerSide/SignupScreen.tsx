@@ -3,13 +3,13 @@ import {
   View,
   Text,
   TextInput,
-  Button,
   Alert,
   StyleSheet,
   ActivityIndicator,
   ImageBackground,
+  TouchableOpacity, // Replace Button with TouchableOpacity
 } from "react-native";
-import { mockDB } from "../../assets/db/mockdb"; // Importing mock database
+import { mockDB } from "../../../assets/db/mockdb"; // Importing mock database
 
 const SignupScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [username, setUsername] = useState("");
@@ -79,7 +79,7 @@ const SignupScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
 
   return (
     <ImageBackground
-      source={require("../../assets/images/Gemini_Generated_Image_r3cq1mr3cq1mr3cq.jpg")} // Replace with your image path
+      source={require("../../../assets/images/Gemini_Generated_Image_r3cq1mr3cq1mr3cq.jpg")} // Replace with your image path
       style={styles.background}
     >
       <View style={styles.container}>
@@ -126,7 +126,14 @@ const SignupScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           onChangeText={setPincode}
         />
 
-        <Button title="Sign Up" onPress={handleSignUp} disabled={loading} />
+        <TouchableOpacity
+          style={styles.loginButton}
+          onPress={handleSignUp}
+          disabled={loading}
+          activeOpacity={0.9} // Set the opacity when pressed
+        >
+          <Text style={styles.loginButtonText}>Sign Up</Text>
+        </TouchableOpacity>
 
         {loading && (
           <ActivityIndicator
@@ -173,12 +180,34 @@ const styles = StyleSheet.create({
   input: {
     height: 45,
     borderColor: "#ccc",
-    borderRadius: 10,
     borderWidth: 1,
+    borderRadius: 15,
     marginBottom: 15,
     width: "100%",
     paddingLeft: 10,
     backgroundColor: "white", // Input background to make it readable
+    shadowColor: "#000", // Shadow color
+    shadowOffset: { width: 0, height: 2 }, // Shadow offset
+    shadowOpacity: 0.25, // Shadow opacity
+    shadowRadius: 3.84, // Shadow blur radius
+    elevation: 5, // Elevation for Android
+  },
+  loginButton: {
+    backgroundColor: "#007bff", // Button background color
+    paddingVertical: 10,
+    borderRadius: 10, // Add curve to the button
+    width: "25%",
+    alignItems: "center",
+    shadowColor: "#000", // Shadow color
+    shadowOffset: { width: 0, height: 1 }, // Shadow offset
+    shadowOpacity: 0.25, // Shadow opacity
+    shadowRadius: 3.84, // Shadow blur radius
+    elevation: 5, // Elevation for Android
+  },
+  loginButtonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
   },
   footerText: {
     marginTop: 20,

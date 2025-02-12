@@ -30,7 +30,7 @@ const Order = ({ navigation }) => {
           // No orders scenario
           <View style={styles.emptyContainer}>
             <Image
-              source={require("../../assets/images/empty_crate.png")} // Replace with your empty crate image
+              source={require("../../../assets/images/empty_crate.png")} // Replace with your empty crate image
               style={styles.emptyImage}
             />
             <Text style={styles.emptyText}>Your basket feels light...</Text>
@@ -38,9 +38,9 @@ const Order = ({ navigation }) => {
               We are excited to deliver your first order.
             </Text>
             <Text style={styles.emptyText}>Explore now!</Text>
-            <TouchableOpacity 
-              style={styles.shopButton} 
-              onPress={() => navigation.navigate('Home')} // Navigate to HomeScreen
+            <TouchableOpacity
+              style={styles.shopButton}
+              onPress={() => navigation.navigate("Home")} // Navigate to HomeScreen
             >
               <Text style={styles.shopButtonText}>Shop now</Text>
             </TouchableOpacity>

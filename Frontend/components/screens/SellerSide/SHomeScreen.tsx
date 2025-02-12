@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import ListedProductsScreen from './ListedProductsScreen'; // Import the ListedProductsScreen
-import ListProductsScreen from './ListProductsScreen'; // Import the ListProductsScreen
-import ProductSalesScreen from './ProductSalesScreen'; // Import the ProductSalesScreen
+import Icon from "react-native-vector-icons/MaterialIcons";
+import ListedProductsScreen from "../BuyerSide/ListedProductsScreen"; // Import the ListedProductsScreen
+import ListProductsScreen from "../BuyerSide/ListProductsScreen"; // Import the ListProductsScreen
+import ProductSalesScreen from "../BuyerSide/ProductSalesScreen"; // Import the ProductSalesScreen
 
 const SHomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [activeTab, setActiveTab] = useState("Product Sales");
@@ -27,12 +27,15 @@ const SHomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
       <View style={styles.header}>
         <View style={styles.logoContainer}>
           <Image
-            source={require("../../assets/images/logo.png")}
+            source={require("../../../assets/images/logo.png")}
             style={styles.logo}
           />
           <Text style={styles.logoText}>SupVeggies</Text>
         </View>
-        <TouchableOpacity style={styles.profileButton} onPress={() => navigation.navigate("SProfile")}>
+        <TouchableOpacity
+          style={styles.profileButton}
+          onPress={() => navigation.navigate("SProfile")}
+        >
           <Icon name="account-circle" size={30} color="#4CAF50" />
         </TouchableOpacity>
       </View>
@@ -45,32 +48,71 @@ const SHomeScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
         <TouchableOpacity
           style={[
             styles.navItem,
-            activeTab === "Product Sales" ? styles.activeNavItem : styles.inactiveNavItem,
+            activeTab === "Product Sales"
+              ? styles.activeNavItem
+              : styles.inactiveNavItem,
           ]}
           onPress={() => setActiveTab("Product Sales")}
         >
-          <Icon name="shopping-cart" size={30} color={activeTab === "Product Sales" ? "#fff" : "#343434"} />
-          <Text style={[styles.navText, { color: activeTab === "Product Sales" ? "#fff" : "#343434" }]}>Product Sales</Text>
+          <Icon
+            name="shopping-cart"
+            size={30}
+            color={activeTab === "Product Sales" ? "#fff" : "#343434"}
+          />
+          <Text
+            style={[
+              styles.navText,
+              { color: activeTab === "Product Sales" ? "#fff" : "#343434" },
+            ]}
+          >
+            Product Sales
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
             styles.navItem,
-            activeTab === "List Products" ? styles.activeNavItem : styles.inactiveNavItem,
+            activeTab === "List Products"
+              ? styles.activeNavItem
+              : styles.inactiveNavItem,
           ]}
           onPress={() => setActiveTab("List Products")}
         >
-          <Icon name="list" size={30} color={activeTab === "List Products" ? "#fff" : "#343434"} />
-          <Text style={[styles.navText, { color: activeTab === "List Products" ? "#fff" : "#343434" }]}>List Products</Text>
+          <Icon
+            name="list"
+            size={30}
+            color={activeTab === "List Products" ? "#fff" : "#343434"}
+          />
+          <Text
+            style={[
+              styles.navText,
+              { color: activeTab === "List Products" ? "#fff" : "#343434" },
+            ]}
+          >
+            List Products
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[
             styles.navItem,
-            activeTab === "Listed Products" ? styles.activeNavItem : styles.inactiveNavItem,
+            activeTab === "Listed Products"
+              ? styles.activeNavItem
+              : styles.inactiveNavItem,
           ]}
           onPress={() => setActiveTab("Listed Products")}
         >
-          <Icon name="check-circle" size={30} color={activeTab === "Listed Products" ? "#fff" : "#343434"} />
-          <Text style={[styles.navText, { color: activeTab === "Listed Products" ? "#fff" : "#343434" }]}>Listed Products</Text>
+          <Icon
+            name="check-circle"
+            size={30}
+            color={activeTab === "Listed Products" ? "#fff" : "#343434"}
+          />
+          <Text
+            style={[
+              styles.navText,
+              { color: activeTab === "Listed Products" ? "#fff" : "#343434" },
+            ]}
+          >
+            Listed Products
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -126,7 +168,7 @@ const styles = StyleSheet.create({
   },
   inactiveNavItem: {
     backgroundColor: "#ccc", // Gray background for inactive tabs
- },
+  },
   navText: {
     fontSize: 14,
   },
